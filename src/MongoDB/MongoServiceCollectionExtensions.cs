@@ -24,8 +24,8 @@ public static class MongoServiceCollectionExtensions
     /// with <see cref="IMongoDatabase"/> retrieved from the dependency injection container.
     /// </summary>
     /// <inheritdoc cref="AddKeyedMongoVectorStore(IServiceCollection, object?, MongoVectorStoreOptions?, ServiceLifetime)"/>
-    [RequiresUnreferencedCode(DynamicCodeMessage)]
-    [RequiresDynamicCode(UnreferencedCodeMessage)]
+    [RequiresUnreferencedCode(UnreferencedCodeMessage)]
+    [RequiresDynamicCode(DynamicCodeMessage)]
     public static IServiceCollection AddMongoVectorStore(
         this IServiceCollection services,
         MongoVectorStoreOptions? options = default,
@@ -41,8 +41,8 @@ public static class MongoServiceCollectionExtensions
     /// <param name="options">Optional options to further configure the <see cref="MongoVectorStore"/>.</param>
     /// <param name="lifetime">The service lifetime for the store. Defaults to <see cref="ServiceLifetime.Singleton"/>.</param>
     /// <returns>Service collection.</returns>
-    [RequiresUnreferencedCode(DynamicCodeMessage)]
-    [RequiresDynamicCode(UnreferencedCodeMessage)]
+    [RequiresUnreferencedCode(UnreferencedCodeMessage)]
+    [RequiresDynamicCode(DynamicCodeMessage)]
     public static IServiceCollection AddKeyedMongoVectorStore(
         this IServiceCollection services,
         object? serviceKey,
@@ -70,8 +70,8 @@ public static class MongoServiceCollectionExtensions
     /// using the provided <paramref name="connectionString"/> and <paramref name="databaseName"/>.
     /// </summary>
     /// <inheritdoc cref="AddKeyedMongoVectorStore(IServiceCollection, object?, string, string, MongoVectorStoreOptions?, ServiceLifetime)"/>
-    [RequiresUnreferencedCode(DynamicCodeMessage)]
-    [RequiresDynamicCode(UnreferencedCodeMessage)]
+    [RequiresUnreferencedCode(UnreferencedCodeMessage)]
+    [RequiresDynamicCode(DynamicCodeMessage)]
     public static IServiceCollection AddMongoVectorStore(
         this IServiceCollection services,
         string connectionString,
@@ -91,8 +91,8 @@ public static class MongoServiceCollectionExtensions
     /// <param name="options">Optional options to further configure the <see cref="MongoVectorStore"/>.</param>
     /// <param name="lifetime">The service lifetime for the store. Defaults to <see cref="ServiceLifetime.Singleton"/>.</param>
     /// <returns>Service collection.</returns>
-    [RequiresUnreferencedCode(DynamicCodeMessage)]
-    [RequiresDynamicCode(UnreferencedCodeMessage)]
+    [RequiresUnreferencedCode(UnreferencedCodeMessage)]
+    [RequiresDynamicCode(DynamicCodeMessage)]
     public static IServiceCollection AddKeyedMongoVectorStore(
         this IServiceCollection services,
         object? serviceKey,
@@ -125,8 +125,8 @@ public static class MongoServiceCollectionExtensions
     /// with <see cref="IMongoDatabase"/> retrieved from the dependency injection container.
     /// </summary>
     /// <inheritdoc cref="AddKeyedMongoVectorStore(IServiceCollection, object?, MongoVectorStoreOptions?, ServiceLifetime)"/>
-    [RequiresUnreferencedCode(DynamicCodeMessage)]
-    [RequiresDynamicCode(UnreferencedCodeMessage)]
+    [RequiresUnreferencedCode(UnreferencedCodeMessage)]
+    [RequiresDynamicCode(DynamicCodeMessage)]
     public static IServiceCollection AddMongoCollection<TRecord>(
         this IServiceCollection services,
         string name,
@@ -146,8 +146,8 @@ public static class MongoServiceCollectionExtensions
     /// <param name="options">Optional options to further configure the <see cref="MongoCollection{TKey, TRecord}"/>.</param>
     /// <param name="lifetime">The service lifetime for the store. Defaults to <see cref="ServiceLifetime.Singleton"/>.</param>
     /// <returns>Service collection.</returns>
-    [RequiresUnreferencedCode(DynamicCodeMessage)]
-    [RequiresDynamicCode(UnreferencedCodeMessage)]
+    [RequiresUnreferencedCode(UnreferencedCodeMessage)]
+    [RequiresDynamicCode(DynamicCodeMessage)]
     public static IServiceCollection AddKeyedMongoCollection<TRecord>(
         this IServiceCollection services,
         object? serviceKey,
