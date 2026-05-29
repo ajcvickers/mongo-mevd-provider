@@ -16,8 +16,8 @@ namespace Microsoft.Extensions.DependencyInjection;
 /// </summary>
 public static class MongoServiceCollectionExtensions
 {
-    private const string DynamicCodeMessage = "This method is incompatible with NativeAOT, consult the documentation for adding collections in a way that's compatible with NativeAOT.";
-    private const string UnreferencedCodeMessage = "This method is incompatible with trimming, consult the documentation for adding collections in a way that's compatible with NativeAOT.";
+    private const string DynamicCodeMessage = "This method is incompatible with NativeAOT, consult the documentation for adding collections in a way that's compatible with trimming, as needed by NativeAOT.";
+    private const string UnreferencedCodeMessage = "This method is incompatible with trimming, consult the documentation for adding collections in a way that's compatible with trimming, as needed by NativeAOT.";
 
     /// <summary>
     /// Registers a <see cref="MongoVectorStore"/> as <see cref="VectorStore"/>
