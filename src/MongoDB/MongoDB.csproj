@@ -23,9 +23,6 @@
     <PackageReference Include="Microsoft.Extensions.AI.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="MongoDB.Driver" />
-    <!-- Override MongoDB.Driver transitives that pin vulnerable versions. -->
-    <PackageReference Include="SharpCompress" />
-    <PackageReference Include="Snappier" />
   </ItemGroup>
 
 </Project>
