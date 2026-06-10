@@ -28,7 +28,15 @@ internal sealed class MongoDbAtlasBuilder : ContainerBuilder<MongoDbAtlasBuilder
     {
         this.Validate();
 
-        var builder = this.WithWaitStrategy(Wait.ForUnixContainer().AddCustomWaitStrategy(new WaitIndicateReadiness()));
+        // The mongodb-atlas-local image starts mongod, then SIGTERMs and restarts it a couple of
+        // seconds later to inject the mongot/search wiring (mongotHost + searchIndexManagementHostAndPort).
+        // Until that restart completes, a vector query either hits the node mid-shutdown
+        // (MongoNodeIsRecoveringException, ShutdownInProgress) or finds mongot's query port (27027) not yet
+        // serving (Connection refused). Wait for the image's own healthcheck first - it only reports healthy
+        // after the restart and mongot wiring complete - then run the search-index probe as a final check.
+        var builder = this.WithWaitStrategy(Wait.ForUnixContainer()
+            .UntilContainerIsHealthy()
+            .AddCustomWaitStrategy(new WaitIndicateReadiness()));
 
         return new MongoDbAtlasContainer(builder.DockerResourceConfiguration);
     }
